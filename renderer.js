@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i <= 15; i++) {
           const simNote = ((3 * unterrichtsnote) + (2 * schriftlich) + i) / 6;
           const gerundet = Math.round(simNote);
-          ausgabeHTML += "<tr><td>" + i + "</td><td>" + simNote.toFixed(2) + "</td><td>" + gerundet + "</td></tr>";
+          const rowClass = gerundet >= 5 ? "table-success" : "";
+          ausgabeHTML += `<tr class="${rowClass}"><td>${i}</td><td>${simNote.toFixed(2)}</td><td>${gerundet}</td></tr>`;
         }
         ausgabeHTML += "</tbody></table>";
       } else if (isNaN(schriftlich) && !isNaN(muendlich)) {
