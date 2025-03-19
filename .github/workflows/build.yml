@@ -2,19 +2,15 @@ name: Build fosAVG Electron App
 
 on:
   push:
-    branches: [ main ]
-  release:
-    types: [created]
+    branches:
+      - main
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Code auschecken
+      - name: Repository klonen
         uses: actions/checkout@v3
 
       - name: Node.js installieren
@@ -25,12 +21,15 @@ jobs:
       - name: Abhängigkeiten installieren
         run: npm install
 
-      - name: Electron App bauen
-        run: npm run dist
+      - name: Electron Builder installieren (global)
+        run: npm install -g electron-builder
 
-      - name: Upload Build-Artefakte
-        if: success()
+      - name: App bauen (Windows und macOS)
+        run: |
+          npx electron-builder --win --mac
+
+      - name: Build-Artefakte hochladen
         uses: actions/upload-artifact@v3
         with:
-          name: fosAVG-${{ runner.os }}
+          name: fosAVG-builds
           path: dist/
