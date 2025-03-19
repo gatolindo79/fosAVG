@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fosAVG</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Eigene CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center min-vh-100">
+
+  <div class="card shadow rounded-4 p-4 mx-auto" style="max-width: 600px; width: 100%;">
+    <h2 class="text-center mb-2">fosAVG</h2>
+    <p class="text-center text-muted small mb-4">
+      Berechnung der Fachnote auf Basis von Unterrichtsleistung, schriftlicher und mündlicher Prüfungsnote – gemäß Vorgaben der FOS Hessen.
+    </p>
+
+    <form id="notenFormular">
+      <div class="mb-3">
+        <label for="unterrichtsnote" class="form-label">
+          Unterrichtsleistung
+          <span class="ms-2 text-primary" data-bs-toggle="tooltip"
+            title="Die Unterrichtsleistung entspricht der Jahresnote im Zeugnis des zweiten Halbjahres der Jahrgangsstufe 12.">
+            <i class="bi bi-info-circle"></i>
+          </span>
+        </label>
+        <input type="number" class="form-control" id="unterrichtsnote" name="unterrichtsnote" min="0" max="15" step="1" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="schriftlich" class="form-label">Schriftliche Prüfungsnote</label>
+        <input type="number" class="form-control" id="schriftlich" name="schriftlich" min="0" max="15" step="1" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="muendlich" class="form-label">Mündliche Prüfungsnote (optional)</label>
+        <input type="number" class="form-control" id="muendlich" name="muendlich" min="0" max="15" step="1" />
+      </div>
+
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <button type="submit" class="btn btn-success" title="Berechne die Fachnote gemäß Bewertungsverordnung">
+          Fachnote berechnen
+        </button>
+        <button type="reset" class="btn btn-danger" title="Lösche alle Eingaben im Formular">
+          Zurücksetzen
+        </button>
+      </div>
+    </form>
+
+    <div id="ergebnis" class="mt-4"></div>
+
+    <div class="alert alert-secondary mt-4 small" role="alert">
+      Hinweis: Die Berechnung der Fachnote erfolgt gemäß § 26 Absatz 2 der Verordnung über die Abschlussprüfung in der Fachoberschule Hessen
+      (<a href="https://www.rv.hessenrecht.hessen.de/bshe/document/hevr-FOSchulAPrOHEV3P26" target="_blank">VOFOS</a>).
+      <i class="bi bi-info-circle"
+         data-bs-toggle="popover"
+         data-bs-placement="auto"
+         data-bs-html="true"
+         title="§ 26 FOSchulAPrO HE"
+         data-bs-content="In Fächern, in denen nur schriftlich geprüft wurde, sind Unterrichtsleistung und schriftliche Prüfungsleistung gleichgewichtet. In Zweifelsfällen überwiegt die Unterrichtsleistung.<br><br>In Fächern, in denen nur mündlich geprüft wurde, ist die Unterrichtsleistung vierfach und die mündliche Prüfungsleistung einfach zu gewichten.<br><br>In Fächern, in denen sowohl schriftlich als auch mündlich geprüft wurde, ist die Unterrichtsleistung dreifach, die schriftliche Prüfungsleistung zweifach und die mündliche Prüfungsleistung einfach zu gewichten.<br><br>Die Gesamtleistung ist auf ganze Punkte zu runden, ab der dezimalen Fünf ist aufzurunden.<br><br><small>Quelle: § 26 FOSchulAPrO HE auf hessenrecht.de</small>">
+      </i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-muted mt-4" style="font-size: 0.9rem;">
+      <i class="bi bi-person-workspace"></i> Entwickelt von Holger Sebastiao – 2025<br>
+      <span style="font-size: 0.8rem;">Version 1.0 – Stand: März 2025</span>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tooltip-Aktivierung -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+        new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+      popoverTriggerList.forEach(function (popoverTriggerEl) {
+        new bootstrap.Popover(popoverTriggerEl);
+      });
+    });
+  </script>
+
+  <!-- Eigene Logik -->
+  <script src="renderer.js"></script>
+
+</body>
+</html>

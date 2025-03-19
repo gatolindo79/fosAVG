@@ -1,0 +1,46 @@
+{
+  "name": "fosAVG",
+  "version": "1.0.0",
+  "description": "Fachnotenberechnung für die Abschlussprüfung der Fachoberschule in Hessen.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "fosAVG",
+    "FOS",
+    "Notenberechnung",
+    "Fachnote",
+    "Schule",
+    "Electron",
+    "Abschlussprüfung",
+    "Hessen",
+    "Bildungssoftware"
+  ],
+  "author": "Holger Sebastiao",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^35.0.2",
+    "electron-builder": "^24.6.0"
+  },
+  "build": {
+    "appId": "de.fosavg.desktop",
+    "productName": "fosAVG",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist/"
+    ],
+    "mac": {
+      "target": ["dmg", "zip"],
+      "icon": "resources/icon.icns"
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "resources/fosAVG_icon.ico"
+    }
+  }
+}

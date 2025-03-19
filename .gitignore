@@ -1,0 +1,34 @@
+
+# Node.js Dependencies
+node_modules/
+
+# Build-Output von Electron
+dist/
+
+# macOS-spezifische Dateien
+.DS_Store
+
+# Log-Dateien
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor-spezifisch
+.vscode/
+*.code-workspace
+
+# Temporäre Systemdateien
+*.swp
+*.swo
+*.tmp
+
+# Electron builder generierte Konfigdateien
+builder-debug.yml
+builder-effective-config.yaml
+
+# Schlüsseldateien (falls du irgendwann Schlüssel generierst)
+*.pem
+
+# Iconsets und Assets (optional, wenn du Icons separat verwaltest)
+icon.iconset/
+AppIcon.appiconset/
