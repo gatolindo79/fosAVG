@@ -33,8 +33,8 @@
       </div>
 
       <div class="mb-3">
-        <label for="schriftlich" class="form-label">Schriftliche Prüfungsnote</label>
-        <input type="number" class="form-control" id="schriftlich" name="schriftlich" min="0" max="15" step="1" required />
+        <label for="schriftlich" class="form-label">Schriftliche Prüfungsnote (optional)</label>
+        <input type="number" class="form-control" id="schriftlich" name="schriftlich" min="0" max="15" step="1" />
       </div>
 
       <div class="mb-3">
@@ -61,15 +61,22 @@
          data-bs-toggle="popover"
          data-bs-placement="auto"
          data-bs-html="true"
-         title="§ 26 FOSchulAPrO HE"
-         data-bs-content="In Fächern, in denen nur schriftlich geprüft wurde, sind Unterrichtsleistung und schriftliche Prüfungsleistung gleichgewichtet. In Zweifelsfällen überwiegt die Unterrichtsleistung.<br><br>In Fächern, in denen nur mündlich geprüft wurde, ist die Unterrichtsleistung vierfach und die mündliche Prüfungsleistung einfach zu gewichten.<br><br>In Fächern, in denen sowohl schriftlich als auch mündlich geprüft wurde, ist die Unterrichtsleistung dreifach, die schriftliche Prüfungsleistung zweifach und die mündliche Prüfungsleistung einfach zu gewichten.<br><br>Die Gesamtleistung ist auf ganze Punkte zu runden, ab der dezimalen Fünf ist aufzurunden.<br><br><small>Quelle: § 26 FOSchulAPrO HE auf hessenrecht.de</small>">
+         title="§ 26 VOFOS"
+         data-bs-content="In Fächern, in denen nur schriftlich geprüft wurde, sind Unterrichtsleistung und schriftliche Prüfungsleistung gleichgewichtet. In Zweifelsfällen überwiegt die Unterrichtsleistung.<br><br>In Fächern, in denen nur mündlich geprüft wurde, ist die Unterrichtsleistung vierfach und die mündliche Prüfungsleistung einfach zu gewichten.<br><br>In Fächern, in denen sowohl schriftlich als auch mündlich geprüft wurde, ist die Unterrichtsleistung dreifach, die schriftliche Prüfungsleistung zweifach und die mündliche Prüfungsleistung einfach zu gewichten.<br><br>Die Gesamtleistung ist auf ganze Punkte zu runden, ab der dezimalen Fünf ist aufzurunden.<br><br><small>Quelle: § 26 VOFOS auf hessenrecht.de</small>">
       </i>
     </div>
 
     <!-- Footer -->
     <footer class="text-center text-muted mt-4" style="font-size: 0.9rem;">
       <i class="bi bi-person-workspace"></i> Entwickelt von Holger Sebastiao – 2025<br>
-      <span style="font-size: 0.8rem;">Version 1.0 – Stand: März 2025</span>
+      <span style="font-size: 0.8rem;">
+        Version 1.1 – Stand: März 2025
+        <button type="button" class="btn btn-link btn-sm p-0 ms-1 align-baseline" 
+                data-bs-toggle="modal" data-bs-target="#versionModal" 
+                style="font-size: 0.8rem; vertical-align: baseline; color: inherit;">
+          <i class="bi bi-info-circle"></i>
+        </button>
+      </span>
     </footer>
   </div>
 
@@ -93,6 +100,36 @@
 
   <!-- Eigene Logik -->
   <script src="renderer.js"></script>
+
+  <!-- Versionshinweise Modal -->
+  <div class="modal fade" id="versionModal" tabindex="-1" aria-labelledby="versionModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="versionModalLabel">Änderungen in Version 1.1</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schließen"></button>
+        </div>
+        <div class="modal-body">
+          <h6>Neu hinzugefügt:</h6>
+          <ul>
+            <li>Unterstützung für Fächer ohne Prüfungspflicht</li>
+            <li>Simulationstabelle für mündliche Prüfungen bei Fächern ohne Prüfungspflicht</li>
+          </ul>
+          
+          <h6>Verbessert:</h6>
+          <ul>
+            <li>Zitierung der relevanten Paragraphen der VOFOS bei jeder Berechnungsmethode</li>
+            <li>Verbesserte Farbkodierung in Simulationstabellen (grün für ≥5 Punkte, rot für &lt;5 Punkte)</li>
+            <li>Beide Prüfungsnoten nun als optional gekennzeichnet</li>
+            <li>Konsistentes Hinweisformat für alle Berechnungsmethoden</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
