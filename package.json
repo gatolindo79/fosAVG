@@ -7,7 +7,8 @@
     "start": "electron .",
     "dist": "electron-builder",
     "dist:mas": "electron-builder --mac mas",
-    "dist:mas-dev": "electron-builder --mac mas-dev"
+    "dist:mas-dev": "electron-builder --mac mas-dev",
+    "dist:win": "electron-builder --win --x64 --dir"
   },
   "keywords": [
     "fosAVG",
@@ -74,11 +75,9 @@
       ]
     },
     "win": {
-      "target": [
-        "nsis",
-        "msi"
-      ],
-      "icon": "resources/fosAVG_icon.ico"
+      "target": "dir",
+      "icon": "resources/fosAVG_icon.ico",
+      "publisherName": "Holger Sebastiao"
     }
   }
 }
