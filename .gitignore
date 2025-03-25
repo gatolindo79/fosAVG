@@ -1,4 +1,3 @@
-
 # Node.js Dependencies
 node_modules/
 
@@ -32,3 +31,8 @@ builder-effective-config.yaml
 # Iconsets und Assets (optional, wenn du Icons separat verwaltest)
 icon.iconset/
 AppIcon.appiconset/
+
+# Zertifikate und Provisioning Profile
+*.provisionprofile
+entitlements.*.plist
+electron-notarize.js

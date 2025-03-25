@@ -1,19 +1,22 @@
 {
   "name": "fos-avg",
-  "version": "1.1.0",
+  "version": "2.0.1",
   "description": "Fachnotenberechnung für die Abschlussprüfung der Fachoberschule in Hessen.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "dist:mas": "electron-builder --mac mas",
+    "dist:mas-dev": "electron-builder --mac mas-dev"
   },
   "keywords": [
     "fosAVG",
     "FOS",
+    "Fachoberschule",
     "Notenberechnung",
     "Fachnote",
     "Schule",
-    "Electron",
+    "mündliche Prüfung",
     "Abschlussprüfung",
     "Hessen",
     "Bildungssoftware"
@@ -22,7 +25,9 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^35.0.2",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^24.13.3",
+    "@electron/notarize": "^2.2.1",
+    "@electron/osx-sign": "^1.0.5"
   },
   "build": {
     "appId": "de.fosavg.desktop",
@@ -37,9 +42,36 @@
     "mac": {
       "category": "public.app-category.education",
       "target": [
-        "dmg"
+        {
+          "target": "dmg",
+          "arch": "universal"
+        }
       ],
-      "icon": "resources/icon.icns"
+      "icon": "resources/icon.icns",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist",
+      "signIgnore": [
+        "node_modules"
+      ],
+      "minimumSystemVersion": "12.0.0",
+      "notarize": false,
+      "identity": "5B4073B9C6183642D9D22D4E3EE6AE4DD17F4D27"
+    },
+    "mas": {
+      "type": "distribution",
+      "category": "public.app-category.education",
+      "entitlements": "entitlements.mas.plist",
+      "entitlementsInherit": "entitlements.mas.inherit.plist",
+      "provisioningProfile": "embedded.provisionprofile",
+      "hardenedRuntime": true,
+      "asarUnpack": [],
+      "artifactName": "${productName}-${version}-mas.${ext}",
+      "identity": "Q4L23AKU53",
+      "signIgnore": [
+        "node_modules"
+      ]
     },
     "win": {
       "target": [

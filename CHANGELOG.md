@@ -2,6 +2,13 @@
 
 Alle wichtigen Änderungen am Projekt werden in dieser Datei dokumentiert.
 
+## [1.1.1] - März 2025
+
+### Verbessert
+- Einheitliche Verwendung des realen Namens des Entwicklers in der Lizenzdatei
+- Redundante LICENSE.txt Datei entfernt
+- Konsistente Versionsnummern in allen Dateien
+
 ## [1.1.0] - März 2025
 
 ### Neu hinzugefügt

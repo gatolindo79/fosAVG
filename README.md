@@ -55,7 +55,7 @@ Siehe Datei [`LICENSE`](./LICENSE) für Details.
 ## 👨‍💻 Entwickler
 
 **Holger Sebastiao**  
-Version 1.0 – Stand: März 2025
+Version 1.1.1 – Stand: März 2025
 
 ---
 

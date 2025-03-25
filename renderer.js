@@ -96,10 +96,30 @@ document.getElementById("versionInfoButton").addEventListener("click", function(
   const { dialog } = require('electron').remote;
   dialog.showMessageBox({
     type: 'info',
-    title: 'Änderungen in Version 1.1',
-    message: 'Was ist neu in fosAVG 1.1',
+    title: 'Änderungen in Version 1.1.1',
+    message: 'Was ist neu in fosAVG 1.1.1',
     detail: '• Unterstützung für Fächer ohne Prüfungspflicht\n• Verbesserte Simulationstabellen\n• Detaillierte Verordnungszitate\n• Farbkodierung für Bestehensgrenze (5 Punkte)',
     buttons: ['OK']
   });
   */
 });
+
+// Version-Information
+// Auskommentiert, da Versionsinfos bereits im Footer und Modal vorhanden sind
+// Alternativ könnte dies beim Start oder Update angezeigt werden
+/*
+document.addEventListener('DOMContentLoaded', () => {
+  const { dialog } = require('@electron/remote');
+  dialog.showMessageBox({
+    type: 'info',
+    title: 'Version 1.1.1',
+    message: 'Änderungen in dieser Version:',
+    detail: '• Unterstützung für Fächer ohne Prüfungspflicht\n' +
+            '• Simulationstabelle für mündliche Prüfungen bei Fächern ohne Prüfungspflicht\n' +
+            '• Zitierung der relevanten Paragraphen der VOFOS bei jeder Berechnungsmethode\n' +
+            '• Verbesserte Farbkodierung in Simulationstabellen\n' +
+            '• Konsistentes Hinweisformat für alle Berechnungsmethoden',
+    buttons: ['OK']
+  });
+});
+*/
