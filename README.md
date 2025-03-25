@@ -66,4 +66,16 @@ Die Grundlage der Berechnungslogik basiert auf der offiziellen Verordnung:
 
 ---
 
+## 🔧 Entwicklung
+
+### Build-Prozess
+1. Repository klonen
+2. `npm install` ausführen
+3. `npm start` für Entwicklungsumgebung
+4. `npm run dist` für Build
+
+Die App kann ohne spezielle Zertifikate oder Profile gebaut und ausgeführt werden. Die in der `package.json` referenzierten Signing-Dateien werden nur für die Veröffentlichung im Mac App Store benötigt und sind nicht im Repository enthalten.
+
+---
+
 > Feedback, Pull Requests oder Verbesserungsvorschläge sind willkommen!
