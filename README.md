@@ -13,7 +13,7 @@ Die App wurde mit **Electron**, **HTML**, **CSS (Bootstrap)** und **JavaScript**
 - Berechnung mit und ohne mündliche Prüfungsnote
 - Automatische Rundung auf ganze Punkte
 - Simulation verschiedener Szenarien
-- Plattformübergreifend: **macOS (.dmg)** und **Windows (.exe)**
+- Plattformübergreifend: **macOS** (Mac App Store) und **Windows** (Portable)
 
 ---
 
@@ -26,21 +26,20 @@ Die App wurde mit **Electron**, **HTML**, **CSS (Bootstrap)** und **JavaScript**
 ## 🛠️ Installation
 
 ### macOS
-1. `.dmg`-Datei aus dem `dist/`-Ordner öffnen.
-2. App in den Programme-Ordner ziehen.
+1. Im Mac App Store nach "fosAVG" suchen
+2. App installieren
 3. Starten und nutzen!
 
 ### Windows
-1. `.exe`-Datei aus dem `dist/`-Ordner ausführen.
-2. Installer durchlaufen.
-3. App starten.
+1. Entpackten Build aus dem `dist/win-unpacked`-Ordner kopieren
+2. `fosAVG.exe` ausführen
 
 ---
 
 ## 📋 Systemanforderungen
 
-- macOS 12+ (Apple Silicon oder Intel)
-- Windows 10 oder höher
+- macOS 15.3 oder höher (Sonoma)
+- Windows 10 oder höher (x64/ARM64)
 - Keine Internetverbindung erforderlich
 
 ---
@@ -55,7 +54,7 @@ Siehe Datei [`LICENSE`](./LICENSE) für Details.
 ## 👨‍💻 Entwickler
 
 **Holger Sebastiao**  
-Version 1.1.1 – Stand: März 2025
+Version 2.0.1 – Stand: März 2025
 
 ---
 
@@ -70,7 +69,7 @@ Die Grundlage der Berechnungslogik basiert auf der offiziellen Verordnung:
 
 ### Build-Prozess
 1. Repository klonen
-2. `npm install` ausführen
+2. `npm install --verbose --insecure` ausführen
 3. `npm start` für Entwicklungsumgebung
 4. `npm run dist` für Build
 
